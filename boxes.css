@@ -1,0 +1,65 @@
+.bubble-flex {
+    padding-left: 20%;
+    flex-direction: column;
+}
+
+.resume-div {
+    display: inline-block;
+    height: 90vh;
+    width: 85%;
+    height: 90vh;
+    max-height: 700px;
+    background-color: white;
+    margin-top: 0;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 8px;
+    padding: 2.5%;
+}
+
+.project-div {
+    display: inline-block;
+    height: 90vh;
+    width: 85%;
+    height: 90vh;
+    max-height: 450px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 15px;
+}
+
+.contact-div {
+    display: inline-block;
+    height: 90vh;
+    width: 85%;
+    height: 90vh;
+    max-height: 200px;
+    background-color: white;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 8px;
+    padding: 2.5%;
+    overflow: scroll;
+}
+
+.intro-div {
+    display: inline-block;
+    height: 60vh;
+    width: 85%;
+    max-height: 375px;
+    background-color: white;
+    margin-top: 2.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 8px;
+    padding: 2.5%;
+}

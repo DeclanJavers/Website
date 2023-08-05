@@ -1,0 +1,127 @@
+.project-flex {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.project-div-1 {
+    display: block;
+    height: 90%;
+    background-color: white;
+    width: 47.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 4px;
+    padding: 2.5%;
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+
+.project-div-1:hover {
+    display: block;
+    height: 90%;
+    background-color: rgb(224, 224, 224);
+    width: 47.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 4px;
+    padding: 2.5%;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.project-div-2 {
+    display: block;
+    background-color: white;
+    height: 90%;
+    width: 47.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 4px;
+    padding: 2.5%;
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+
+.project-div-2:hover {
+    display: block;
+    background-color: rgb(224, 224, 224);
+    height: 90%;
+    width: 47.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-color: black;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 4px;
+    padding: 2.5%;
+    overflow: scroll;
+    padding-bottom: 10px;
+}
+
+.website-picture {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.project-title {
+    height: 17%;
+    width: 100%;
+    font: 500;
+}
+
+h1 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 32px;
+    font-family: 'macho', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+h2 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 18px;
+    font-family: 'macho', sans-serif;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 32px;
+    font-family: 'macho', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+h4 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    font-size: 18px;
+    font-family: 'macho', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family:"new-spirit", serif;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    font-size: 200;
+}
+
+.projecttext{
+    overflow: scroll;
+}

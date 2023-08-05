@@ -1,0 +1,80 @@
+.top-line-div{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.picture {
+    height: 90%;
+    aspect-ratio: 1 / 1;
+    max-width: 160;
+    border-radius: 50%;
+    border-width: 4px;
+    border-color: black;
+    border-style: solid;
+}
+
+.self-image {
+    flex: 1;
+    max-width: 200px;
+}
+
+.opening-line-div {
+    height: 100%;
+    flex: 10;
+}
+
+.paragraph-div {
+    overflow: hidden;
+    height: 60%;
+}
+
+.opening-text {
+    font-size: 50px;
+    color: black;
+    font-family: 'macho', sans-serif;
+    font-style: italic;
+    font-weight:400;
+    text-align: center;
+}
+
+.paragraph-text {
+    height: 100%;
+    line-height: 30px;
+    font-size: large;
+    font-family: "new-spirit", serif;
+    font-weight: 400;
+    overflow: scroll;
+}
+
+.header {
+    font-size: 60px;
+    font-family: 'macho', sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 2.5%;
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+
+.pdf {
+    height: 100%;
+    width: 100%;
+}
+
+.contact-header {
+    font-size: xx-large;
+    font-family: "new-spirit", serif;
+    font-weight: 300;
+}
+
+.contact-words {
+    font-size: large;
+    font-family: "new-spirit", serif;
+}
+
+.small-text {
+    font-size: large;
+    font-weight: 800;
+}
