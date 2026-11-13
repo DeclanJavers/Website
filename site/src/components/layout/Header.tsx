@@ -40,7 +40,7 @@ export default function Header() {
             Games
           </button>
           <a href="/Declan_Javers_Resume.pdf" target="_blank" title="Résumé (PDF, 57 KB)" className="rounded-full border border-ink/80 px-4 py-1.5 transition-colors hover:bg-ink hover:text-paper">
-            Résumé
+            Résumé<span className="sr-only"> (PDF, 57 KB)</span>
           </a>
         </nav>
 

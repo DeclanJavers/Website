@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { projects } from '@/data/projects'
 import { useArcade } from '@/context/ArcadeContext'
@@ -28,8 +27,8 @@ export default function Projects() {
         />
 
         <div className="grid gap-x-10 gap-y-14 md:grid-cols-2">
-          {featured.map((p, i) => (
-            <Feature key={p.id} project={p} index={i} />
+          {featured.map((p) => (
+            <Feature key={p.id} project={p} />
           ))}
         </div>
 
@@ -46,15 +45,10 @@ export default function Projects() {
   )
 }
 
-function Feature({ project, index }: { project: Project; index: number }) {
+function Feature({ project }: { project: Project }) {
   const { openArcade } = useArcade()
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.7, delay: index * 0.08 }}
-    >
+    <article className="reveal">
       <button onClick={() => project.playId && openArcade(project.playId)} className="group block w-full overflow-hidden bg-sheet text-left" aria-label={`Play ${project.title}`}>
         <Picture
           name={project.id}
@@ -84,7 +78,7 @@ function Feature({ project, index }: { project: Project; index: number }) {
         )}
         <span className="text-[13px] text-muted">{project.technologies.join(' · ')}</span>
       </div>
-    </motion.article>
+    </article>
   )
 }
 

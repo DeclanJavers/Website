@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://declanjavers.com'),
   title: 'Declan Javers',
   description,
-  authors: [{ name: 'Declan Javers' }],
+  authors: [{ name: 'Declan Javers', url: '/humans.txt' }],
   openGraph: {
     title: 'Declan Javers',
     description,

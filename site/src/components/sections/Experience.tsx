@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { education, roles } from '@/data/experience'
 import type { Role } from '@/types'
 
@@ -22,8 +21,8 @@ export default function Experience() {
       <div className="mx-auto max-w-page">
         <SectionHead n="01" title="Experience" />
         <div className="divide-y divide-rule">
-          {roles.map((r, i) => (
-            <Entry key={r.id} role={r} index={i} />
+          {roles.map((r) => (
+            <Entry key={r.id} role={r} />
           ))}
         </div>
 
@@ -45,16 +44,10 @@ export default function Experience() {
   )
 }
 
-function Entry({ role, index }: { role: Role; index: number }) {
+function Entry({ role }: { role: Role }) {
   const minor = role.steps.length < 4
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.7, delay: index * 0.04 }}
-      className="grid gap-6 py-10 first:pt-0 md:grid-cols-[220px_1fr] md:gap-12 md:py-14"
-    >
+    <article className="reveal grid gap-6 py-10 first:pt-0 md:grid-cols-[220px_1fr] md:gap-12 md:py-14">
       <div className="text-[14px] leading-relaxed text-muted">
         <p className="text-ink/85">{role.dates}</p>
         <p>{role.place}</p>
@@ -87,6 +80,6 @@ function Entry({ role, index }: { role: Role; index: number }) {
           </div>
         )}
       </div>
-    </motion.article>
+    </article>
   )
 }

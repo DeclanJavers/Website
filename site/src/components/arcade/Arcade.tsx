@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { Maximize2, Play, RotateCcw, X } from 'lucide-react'
 import { useArcade } from '@/context/ArcadeContext'
 import { games, type Game } from '@/data/games'
@@ -23,47 +22,30 @@ export default function Arcade() {
     }
   }, [open, closeArcade])
 
+  if (!game) return null
   return (
-    <AnimatePresence>
-      {game && (
-        <motion.div
-          className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          role="dialog"
-          aria-modal="true"
-          aria-label="Games"
-        >
-          <div className="absolute inset-0 bg-ink/40 backdrop-blur-[2px]" onClick={closeArcade} />
-          <motion.div
-            initial={{ y: 24, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 16, opacity: 0 }}
-            transition={{ duration: 0.35, ease: [0.2, 0.65, 0.3, 1] }}
-            className="relative flex max-h-[100svh] w-full max-w-6xl flex-col overflow-hidden bg-paper shadow-[0_30px_80px_-30px_rgba(28,27,25,.45)] sm:max-h-[92vh]"
-          >
-            <div className="flex items-center justify-between border-b border-rule px-5 sm:px-7">
-              <div className="flex gap-7">
-                {games.map((g) => (
-                  <button
-                    key={g.id}
-                    onClick={() => openArcade(g.id)}
-                    className={`-mb-px border-b-2 py-4 font-serif text-[20px] transition-colors ${g.id === game.id ? 'border-ink text-ink' : 'border-transparent text-muted hover:text-ink'}`}
-                  >
-                    {g.title}
-                  </button>
-                ))}
-              </div>
-              <button onClick={closeArcade} className="-mr-2 p-2 text-muted transition hover:text-ink" aria-label="Close">
-                <X size={20} strokeWidth={1.5} />
+    <div className="fade-in fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6" role="dialog" aria-modal="true" aria-label="Games">
+      <div className="absolute inset-0 bg-ink/40 backdrop-blur-[2px]" onClick={closeArcade} />
+      <div className="sheet-in relative flex max-h-[100svh] w-full max-w-6xl flex-col overflow-hidden bg-paper shadow-[0_30px_80px_-30px_rgba(28,27,25,.45)] sm:max-h-[92vh]">
+        <div className="flex items-center justify-between border-b border-rule px-5 sm:px-7">
+          <div className="flex gap-7">
+            {games.map((g) => (
+              <button
+                key={g.id}
+                onClick={() => openArcade(g.id)}
+                className={`-mb-px border-b-2 py-4 font-serif text-[20px] transition-colors ${g.id === game.id ? 'border-ink text-ink' : 'border-transparent text-muted hover:text-ink'}`}
+              >
+                {g.title}
               </button>
-            </div>
-            <Cabinet key={game.id} game={game} />
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+            ))}
+          </div>
+          <button onClick={closeArcade} className="-mr-2 p-2 text-muted transition hover:text-ink" aria-label="Close">
+            <X size={20} strokeWidth={1.5} />
+          </button>
+        </div>
+        <Cabinet key={game.id} game={game} />
+      </div>
+    </div>
   )
 }
 
@@ -91,16 +73,20 @@ function Cabinet({ game }: { game: Game }) {
                   frame.current?.focus()
                 }}
               />
-              {!loaded && (
-                <div className="pointer-events-none absolute inset-0 grid place-items-center bg-ink text-[14px] text-paper/70">
-                  Loading {game.title}…
-                </div>
-              )}
+              {!loaded && <div className="pointer-events-none absolute inset-0 grid place-items-center bg-ink text-[14px] text-paper/70">Loading {game.title}…</div>}
             </>
           ) : (
             <button onClick={() => setRunning(true)} className="group absolute inset-0 block w-full" aria-label={`Start ${game.title}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={game.image} alt="" width={1280} height={720} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-500 group-hover:opacity-95" />
+              <img
+                src={game.image}
+                alt=""
+                width={1280}
+                height={720}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover opacity-80 transition duration-500 group-hover:opacity-95"
+              />
               <span className="absolute inset-0 grid place-items-center">
                 <span className="flex items-center gap-3 rounded-full bg-paper px-6 py-3 text-[15px] font-medium text-ink shadow-lg transition group-hover:scale-[1.03]">
                   <Play size={16} fill="currentColor" /> Play {game.title}
