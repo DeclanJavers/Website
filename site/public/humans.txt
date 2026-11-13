@@ -1,0 +1,10 @@
+/* TEAM */
+Designed and built by: Declan Javers
+Contact: declanjavers [at] gmail.com
+From: Boston, Massachusetts
+
+/* SITE */
+Last update: 2026-11-13
+Built with: Next.js, React, Tailwind CSS
+Fonts: Newsreader, Instrument Sans
+Hosting: Vercel
